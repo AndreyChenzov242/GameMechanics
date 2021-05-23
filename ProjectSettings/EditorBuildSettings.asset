@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Lever Switcher.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Coroutine.unity
+    guid: 39ca5aaa911cff743864938ba494cf4b
+  - enabled: 1
+    path: Assets/Scenes/DoTween.unity
+    guid: 00ca84f47b116804a9f8b263fe4e1362
+  - enabled: 1
+    path: Assets/Scenes/StrictAlgorithm.unity
+    guid: f8c2d91bc5e73f842a065de21e089d31
+  - enabled: 1
+    path: Assets/Scenes/ComputerDisassembling.unity
+    guid: ef1353557903359459c8cf4c475ee66b
+  - enabled: 1
+    path: Assets/Scenes/ScrollView.unity
+    guid: c33aa806713f1c141a0d199140f4d305
+  m_configObjects: {}
