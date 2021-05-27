@@ -7,8 +7,11 @@ public class LeverSwitcher : MonoBehaviour
     [SerializeField] private Camera _mainCamera;
     [SerializeField] private float _range = 5f;
 
-    [SerializeField] private GameObject _wall;
+    private float _startPoint = 340f;
+    private float _endPoint = 240f;
 
+    public delegate void PercentageDelegate(float percentage);
+    public static event PercentageDelegate Percentage;
 
     private void OnMouseDrag()
     {
@@ -20,19 +23,17 @@ public class LeverSwitcher : MonoBehaviour
         newUp.z = 0;
         transform.up = newUp.normalized;
 
-        if (transform.eulerAngles.z > 340f || transform.eulerAngles.z < 120f)
+        if (transform.eulerAngles.z > _startPoint || transform.eulerAngles.z < 120f)
         {
-            transform.eulerAngles = new Vector3(0, 0, 340f);
-            //_wall.GetComponent<VerticalSlider>().StartLiftWall();
-            _wall.GetComponent<LeanTweenSlider>().StartUp();
+            transform.eulerAngles = new Vector3(0, 0, _startPoint);
 
         }
-        if (transform.eulerAngles.z < 240f)
+        if (transform.eulerAngles.z < _endPoint)
         {
-            transform.eulerAngles = new Vector3(0, 0, 240f);
-            //_wall.GetComponent<VerticalSlider>().StartLowerWall();
-            _wall.GetComponent<LeanTweenSlider>().StartDown();
+            transform.eulerAngles = new Vector3(0, 0, _endPoint);
         }
+
+        Percentage(Mathf.InverseLerp(_startPoint, _endPoint, transform.eulerAngles.z));
     }
 
     private Vector3 GetWorldCursorPosition()

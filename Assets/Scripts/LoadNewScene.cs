@@ -12,5 +12,11 @@ public class LoadNewScene : MonoBehaviour
             SceneManager.LoadScene(
                 SceneManager.GetActiveScene().buildIndex + 1 == 6 ? 0 : SceneManager.GetActiveScene().buildIndex + 1);
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene(
+                SceneManager.GetActiveScene().buildIndex == 0 ? 0 : SceneManager.GetActiveScene().buildIndex - 1);
+        }
     }
 }

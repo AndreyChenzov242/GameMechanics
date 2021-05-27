@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainCamera: {fileID: 0}
-  _range: 5
   OnUntwist:
     m_PersistentCalls:
       m_Calls:
@@ -62,6 +61,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _range: 5
 --- !u!65 &4439500578407779207
 BoxCollider:
   m_ObjectHideFlags: 0
